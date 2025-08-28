@@ -4,7 +4,7 @@ import Link from "next/link"
 import { usePathname } from "next/navigation"
 import { cn } from "@/lib/utils"
 import { Button } from "@/components/ui/button"
-import { Home, FileText, Settings, Upload, Bell, LogOut } from "lucide-react"
+import { Home, FileText, Settings, Upload, LogOut } from "lucide-react"
 import { signOut } from "next-auth/react"
 
 const navItems = [

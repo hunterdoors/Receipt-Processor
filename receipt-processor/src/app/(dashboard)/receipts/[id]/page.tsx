@@ -2,7 +2,8 @@ import { notFound } from "next/navigation"
 import { ArrowLeft, Download, Printer, CheckCircle, XCircle, Clock, Pencil, Trash2 } from "lucide-react"
 import Link from "next/link"
 import { Button } from "@/components/ui/button"
-import { Card, CardContent, CardHeader, CardTitle, CardDescription } from "@/components/ui/card"
+import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import Image from 'next/image'
 
 // Mock function to fetch receipt data - replace with actual API call
 async function getReceipt(id: string) {
@@ -209,10 +210,13 @@ export default async function ReceiptDetailPage({ params }: { params: { id: stri
             </CardHeader>
             <CardContent>
               <div className="aspect-square bg-gray-100 rounded-md flex items-center justify-center overflow-hidden">
-                <img 
-                  src={receipt.receiptImage} 
-                  alt="Receipt" 
+                <Image
+                  src={receipt.receiptImage}
+                  alt="Receipt"
+                  width={500}
+                  height={500}
                   className="object-cover w-full h-full"
+                  priority
                 />
               </div>
             </CardContent>
